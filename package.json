@@ -7,6 +7,6 @@
     "parcel-bundler": "^1.11.0"
   },
   "scripts": {
-    "build": "parcel build \"./src/lazyload-picturefill-background.js\" --out-dir dist --experimental-scope-hoisting"
+    "build": "parcel build \"./src/lazyload-picturefill-background.js\" --out-dir dist"
   }
 }
