@@ -5,9 +5,13 @@
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4"
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   },
   "scripts": {
-    "build": "npx babel \"src/lazyload-picturefill-background.js\" --out-file \"dist/lazyload-picturefill-background.js\""
+    "develop": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   }
 }

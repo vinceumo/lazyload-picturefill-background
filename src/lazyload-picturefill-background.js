@@ -1,4 +1,4 @@
-class lazyloadPicturefillBackground {
+export default class lazyloadPicturefillBackground {
   constructor(options) {
     this.options = lazyloadPicturefillBackground.updateDefaultSettings(options);
     this.init();
