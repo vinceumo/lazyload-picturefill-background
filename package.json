@@ -3,10 +3,11 @@
   "name": "lazyload-picturefill-background",
   "private": true,
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
-    "parcel-bundler": "^1.11.0"
+    "@babel/preset-env": "^7.3.4"
   },
   "scripts": {
-    "build": "parcel build \"./src/lazyload-picturefill-background.js\" --out-dir dist"
+    "build": "npx babel \"src/lazyload-picturefill-background.js\" --out-file \"dist/lazyload-picturefill-background.js\""
   }
 }

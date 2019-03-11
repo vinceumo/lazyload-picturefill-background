@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Lazyload picturefill Background demo</title>
+    <style>
+      .picturefill-background {
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .picturefill-background.is-lazy {
+        background-color: lightsalmon;
+      }
+
+      /*---------*/
+      .example {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
   </head>
-  <body></body>
+
+  <body>
+    <div class="picturefill-background is-lazy example">
+      <span
+        class="picturefill-background-source"
+        data-src="https://source.unsplash.com/random/400x400"
+      ></span>
+      <span
+        class="picturefill-background-source"
+        data-src="https://source.unsplash.com/random/640x640"
+        data-media="(min-width: 400px)"
+      ></span>
+      <span
+        class="picturefill-background-source"
+        data-src="https://source.unsplash.com/random/800x800"
+        data-media="(min-width: 640px)"
+      ></span>
+      <span
+        class="picturefill-background-source"
+        data-src="https://source.unsplash.com/random/1500x1500"
+        data-media="(min-width: 800px)"
+      ></span>
+      <p>Lazy</p>
+    </div>
+  </body>
+  <script src="../dist/lazyload-picturefill-background.js"></script>
+  <script>
+    var lazyBg = new lazyloadPicturefillBackground();
+  </script>
 </html>

@@ -1,4 +1,190 @@
-parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcelRequire,u="function"==typeof require&&require;function f(t,n){if(!r[t]){if(!e[t]){var i="function"==typeof parcelRequire&&parcelRequire;if(!n&&i)return i(t,!0);if(o)return o(t,!0);if(u&&"string"==typeof t)return u(t);var c=new Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[t][1][r]||r},p.cache={};var l=r[t]=new f.Module(t);e[t][0].call(l.exports,p,l,l.exports,this)}return r[t].exports;function p(e){return f(p.resolve(e))}}f.isParcelRequire=!0,f.Module=function(e){this.id=e,this.bundle=f,this.exports={}},f.modules=e,f.cache=r,f.parent=o,f.register=function(r,t){e[r]=[function(e,r){r.exports=t},{}]};for(var c=0;c<t.length;c++)try{f(t[c])}catch(e){i||(i=e)}if(t.length){var l=f(t[t.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd?define(function(){return l}):n&&(this[n]=l)}if(parcelRequire=f,i)throw i;return f}({"YuwJ":[function(require,module,exports) {
-"use strict";function e(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function t(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function r(e,r,n){return r&&t(e.prototype,r),n&&t(e,n),e}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var n=function(){function t(r){e(this,t),this.options=t.updateDefaultSettings(r),this.init()}return r(t,[{key:"init",value:function(){var e=this;this.options.pictureFillBackgroundSelector.length&&Array.prototype.forEach.call(this.options.pictureFillBackgroundSelector,function(t){var r=[],n=[],o=t.querySelectorAll(e.options.pictureFillBackgroundSourceSelector);r=e.getSources(o);var a=!0,c=!1,i=void 0;try{for(var l,u=function(){var r=l.value,o=window.matchMedia(r.media);window.matchMedia&&o.matches&&n.push(r.src),o.addListener(function(){o.matches&&(new RegExp(e.escapeRegExp(r.src)).test(t.style.backgroundImage)||(t.style.backgroundImage="url('"+r.src+"')"))})},s=r[Symbol.iterator]();!(a=(l=s.next()).done);a=!0)u()}catch(g){c=!0,i=g}finally{try{a||null==s.return||s.return()}finally{if(c)throw i}}if(t.classList.contains(e.options.lazySelector.substring(1)))createObserver(t,n);else{var p=n.length?n.pop():r[0];t.style.backgroundImage="url('"+p+"')"}})}},{key:"getSources",value:function(e){var t=[];return Array.prototype.forEach.call(e,function(e){var r={src:e.getAttribute("data-src"),media:e.getAttribute("data-media")};t.push(r)}),t}},{key:"createObserver",value:function(e,t){new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){var r=e.target;r.classList.remove(this.options.lazySelector.substring(1)),this.lazyBackgroundImageObserver.unobserve(r);var n=t.length?t.pop():matches[0];r.style.backgroundImage="url('"+n+"')"}})}).observe(e)}},{key:"escapeRegExp",value:function(e){return e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}}],[{key:"updateDefaultSettings",value:function(e){var t={pictureFillBackgroundSelector:".picturefill-background",lazySelector:"is-lazy",pictureFillBackgroundSourceSelector:".picturefill-background-source"};for(var r in e)t[r]=e[r];return t.pictureFillBackgroundSelector="string"==typeof t.pictureFillBackgroundSelector?document.querySelectorAll(t.pictureFillBackgroundSelector):t.pictureFillBackgroundSelector,t}}]),t}();exports.default=n;
-},{}]},{},["YuwJ"], null)
-//# sourceMappingURL=/lazyload-picturefill-background.js.map
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+var lazyloadPicturefillBackground =
+  /*#__PURE__*/
+  (function() {
+    function lazyloadPicturefillBackground(options) {
+      _classCallCheck(this, lazyloadPicturefillBackground);
+
+      this.options = lazyloadPicturefillBackground.updateDefaultSettings(
+        options
+      );
+      this.init();
+    }
+
+    _createClass(
+      lazyloadPicturefillBackground,
+      [
+        {
+          key: "init",
+          value: function init() {
+            var _this = this;
+
+            if (this.options.pictureFillBackgroundSelector.length) {
+              Array.prototype.forEach.call(
+                this.options.pictureFillBackgroundSelector,
+                function(el) {
+                  var matches = [];
+                  var mqMatches = [];
+                  var sources = el.querySelectorAll(
+                    _this.options.pictureFillBackgroundSourceSelector
+                  );
+                  matches = _this.getSources(sources);
+                  var _iteratorNormalCompletion = true;
+                  var _didIteratorError = false;
+                  var _iteratorError = undefined;
+
+                  try {
+                    var _loop = function _loop() {
+                      var match = _step.value;
+                      var mq = window.matchMedia(match.media);
+
+                      if (window.matchMedia && mq.matches) {
+                        mqMatches.push(match.src);
+                      }
+
+                      mq.addListener(function() {
+                        if (mq.matches) {
+                          var exp = new RegExp(_this.escapeRegExp(match.src));
+
+                          if (!exp.test(el.style.backgroundImage)) {
+                            el.style.backgroundImage =
+                              "url('" + match.src + "')";
+                          }
+                        }
+                      });
+                    };
+
+                    for (
+                      var _iterator = matches[Symbol.iterator](), _step;
+                      !(_iteratorNormalCompletion = (_step = _iterator.next())
+                        .done);
+                      _iteratorNormalCompletion = true
+                    ) {
+                      _loop();
+                    }
+                  } catch (err) {
+                    _didIteratorError = true;
+                    _iteratorError = err;
+                  } finally {
+                    try {
+                      if (
+                        !_iteratorNormalCompletion &&
+                        _iterator.return != null
+                      ) {
+                        _iterator.return();
+                      }
+                    } finally {
+                      if (_didIteratorError) {
+                        throw _iteratorError;
+                      }
+                    }
+                  }
+
+                  if (
+                    el.classList.contains(
+                      _this.options.lazySelector.substring(1)
+                    )
+                  ) {
+                    createObserver(el, mqMatches);
+                  } else {
+                    var src = mqMatches.length ? mqMatches.pop() : matches[0];
+                    el.style.backgroundImage = "url('" + src + "')";
+                  }
+                }
+              );
+            }
+          }
+        },
+        {
+          key: "getSources",
+          value: function getSources(sourcesEls) {
+            var matches = [];
+            Array.prototype.forEach.call(sourcesEls, function(source) {
+              var sourceObj = {
+                src: source.getAttribute("data-src"),
+                media: source.getAttribute("data-media")
+              };
+              matches.push(sourceObj);
+            });
+            return matches;
+          }
+        },
+        {
+          key: "createObserver",
+          value: function createObserver(
+            pictureFillBackgroundSelector,
+            mqMatches
+          ) {
+            var observer = new IntersectionObserver(function(entries) {
+              entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                  var lazyImage = entry.target;
+                  lazyImage.classList.remove(
+                    this.options.lazySelector.substring(1)
+                  );
+                  this.lazyBackgroundImageObserver.unobserve(lazyImage);
+                  var src = mqMatches.length ? mqMatches.pop() : matches[0];
+                  lazyImage.style.backgroundImage = "url('" + src + "')";
+                }
+              });
+            });
+            observer.observe(pictureFillBackgroundSelector);
+          }
+        },
+        {
+          key: "escapeRegExp",
+          value: function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          }
+        }
+      ],
+      [
+        {
+          key: "updateDefaultSettings",
+          value: function updateDefaultSettings(userSettings) {
+            var defaultSettings = {
+              pictureFillBackgroundSelector: ".picturefill-background",
+              lazySelector: "is-lazy",
+              pictureFillBackgroundSourceSelector:
+                ".picturefill-background-source"
+            };
+
+            for (var attrname in userSettings) {
+              defaultSettings[attrname] = userSettings[attrname];
+            }
+
+            defaultSettings.pictureFillBackgroundSelector =
+              typeof defaultSettings.pictureFillBackgroundSelector === "string"
+                ? document.querySelectorAll(
+                    defaultSettings.pictureFillBackgroundSelector
+                  )
+                : defaultSettings.pictureFillBackgroundSelector;
+            return defaultSettings;
+          }
+        }
+      ]
+    );
+
+    return lazyloadPicturefillBackground;
+  })();
