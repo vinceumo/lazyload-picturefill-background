@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "name": "lazyload-picturefill-background",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "parcel-bundler": "^1.11.0"
+  },
+  "scripts": {
+    "build": "parcel build \"./src/lazyload-picturefill-background.js\" --out-dir dist --experimental-scope-hoisting"
+  }
+}
