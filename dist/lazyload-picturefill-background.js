@@ -108,7 +108,9 @@ var lazyloadPicturefillBackground =
                   ) {
                     createObserver(el, mqMatches);
                   } else {
-                    var src = mqMatches.length ? mqMatches.pop() : matches[0];
+                    var src = mqMatches.length
+                      ? mqMatches.pop()
+                      : matches[0].src;
                     el.style.backgroundImage = "url('" + src + "')";
                   }
                 }
@@ -144,7 +146,7 @@ var lazyloadPicturefillBackground =
                     this.options.lazySelector.substring(1)
                   );
                   this.lazyBackgroundImageObserver.unobserve(lazyImage);
-                  var src = mqMatches.length ? mqMatches.pop() : matches[0];
+                  var src = mqMatches.length ? mqMatches.pop() : matches[0].src;
                   lazyImage.style.backgroundImage = "url('" + src + "')";
                 }
               });

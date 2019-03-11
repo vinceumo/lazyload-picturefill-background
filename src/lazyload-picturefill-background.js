@@ -58,7 +58,7 @@ class lazyloadPicturefillBackground {
           if (el.classList.contains(this.options.lazySelector.substring(1))) {
             createObserver(el, mqMatches);
           } else {
-            let src = mqMatches.length ? mqMatches.pop() : matches[0];
+            let src = mqMatches.length ? mqMatches.pop() : matches[0].src;
             el.style.backgroundImage = "url('" + src + "')";
           }
         }
@@ -89,7 +89,7 @@ class lazyloadPicturefillBackground {
           lazyImage.classList.remove(this.options.lazySelector.substring(1));
           this.lazyBackgroundImageObserver.unobserve(lazyImage);
 
-          let src = mqMatches.length ? mqMatches.pop() : matches[0];
+          let src = mqMatches.length ? mqMatches.pop() : matches[0].src;
           lazyImage.style.backgroundImage = "url('" + src + "')";
         }
       });
