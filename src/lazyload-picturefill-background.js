@@ -11,8 +11,8 @@ export default class lazyloadPicturefillBackground {
       pictureFillBackgroundSourceSelector: ".picturefill-background-source"
     };
 
-    for (const attrname in userSettings) {
-      defaultSettings[attrname] = userSettings[attrname];
+    for (const attrName in userSettings) {
+      defaultSettings[attrName] = userSettings[attrName];
     }
 
     defaultSettings.pictureFillBackgroundSelector =
@@ -38,18 +38,18 @@ export default class lazyloadPicturefillBackground {
 
           matches = this.getSources(sources);
 
-          for (let match of matches) {
-            const mq = window.matchMedia(match.media);
+          for (let i = 0; i <= matches.length; i++) {
+            const mq = window.matchMedia(matches[i].media);
 
             if (window.matchMedia && mq.matches) {
-              mqMatches.push(match.src);
+              mqMatches.push(matches[i].src);
             }
 
             mq.addListener(() => {
               if (mq.matches) {
-                const exp = new RegExp(this.escapeRegExp(match.src));
+                const exp = new RegExp(this.escapeRegExp(matches[i].src));
                 if (!exp.test(el.style.backgroundImage)) {
-                  el.style.backgroundImage = "url('" + match.src + "')";
+                  el.style.backgroundImage = "url('" + matches[i].src + "')";
                 }
               }
             });
