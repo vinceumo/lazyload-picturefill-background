@@ -2,7 +2,7 @@ const path = require("path");
 const libraryName = "lazyloadPicturefillBackground";
 
 module.exports = {
-  entry: "./src/lazyload-picturefill-background.js",
+  entry: ["./src/lazyload-picturefill-background.js"],
   output: {
     filename: "lazyload-picturefill-background.min.js",
     path: path.resolve(__dirname, "dist"),
