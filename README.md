@@ -1,10 +1,23 @@
 # Lazyload Picturefill Background
 
+Responsive background images using [Window.matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) and the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
+
 This project is inspired from [M6Web/picturefill-background](https://github.com/M6Web/picturefill-background)
 
-## Set up
+- [Lazyload Picturefill Background](#lazyload-picturefill-background)
+  - [Getting Started](#getting-started)
+    - [JS](#js)
+    - [HTML](#html)
+    - [CSS](#css)
+    - [Change default selectors](#change-default-selectors)
+  - [Browser support](#browser-support)
+  - [License](#license)
 
-## JS
+## Getting Started
+
+### JS
+
+Using ES6 and import
 
 ```js
 import lazyloadPicturefillBackground from "lazyload-picturefill-background";
@@ -12,9 +25,18 @@ import lazyloadPicturefillBackground from "lazyload-picturefill-background";
 new lazyloadPicturefillBackground();
 ```
 
-## HTML
+If you are not using babel you can use `dist/lazyload-picturefill-background.min.js`
 
-The `.is-lazy` selector is optional. Use it if you want to lazyload this one.
+```html
+<script src="lazyload-picturefill-background.min.js"></script>
+<script>
+  new lazyloadPicturefillBackground();
+</script>
+```
+
+### HTML
+
+The `.is-lazy` selector is optional. Use it if you want to lazyload our `.picturefill-background` elements.
 
 ```html
 <div class="picturefill-background is-lazy">
@@ -47,6 +69,8 @@ By default:
 
 ### CSS
 
+Set your CSS as you need:
+
 ```css
 .picturefill-background {
   background-size: cover;
@@ -69,3 +93,17 @@ new lazyloadPicturefillBackground({
   pictureFillBackgroundSourceSelector: ".picturefill-background-source" //String
 });
 ```
+
+## Browser support
+
+Lazyload Picturefill Background will work in all the modern browsers. the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) is not supported on IE you can use the [w3c polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill).
+
+The IntersectionObserver polyfill can be included in your project using [polyfill.io](https://polyfill.io/v3/), which will automatically include dependencies where necessary:
+
+```html
+<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
