@@ -8,6 +8,7 @@ This project is inspired by [M6Web/picturefill-background](https://github.com/M6
 
 - [Lazyload Picturefill Background](#lazyload-picturefill-background)
   - [Getting Started](#getting-started)
+    - [Install](#install)
     - [JS](#js)
     - [HTML](#html)
     - [CSS](#css)
@@ -16,6 +17,28 @@ This project is inspired by [M6Web/picturefill-background](https://github.com/M6
   - [License](#license)
 
 ## Getting Started
+
+### Install
+
+With npm:
+
+```bash
+npm install lazyload-picturefill-background
+```
+
+With yarn:
+
+```bash
+yarn add lazyload-picturefill-background
+```
+
+With CDN:
+
+```html
+<script src="https://unpkg.com/lazyload-picturefill-background@1.0.0/dist/lazyload-picturefill-background.min.js"></script>
+```
+
+You can as well clone this repository.
 
 ### JS
 

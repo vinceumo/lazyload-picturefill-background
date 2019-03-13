@@ -1,7 +1,8 @@
 {
   "version": "1.0.0",
   "name": "lazyload-picturefill-background",
-  "private": true,
+  "description": "Responsive background images using Window.matchMedia() and the Intersection Observer API",
+  "private": false,
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
@@ -11,6 +12,21 @@
   },
   "scripts": {
     "develop": "webpack --mode development --watch",
-    "build": "webpack --mode production"
-  }
+    "build": "webpack --mode production",
+    "prepublish": "npm run build"
+  },
+  "main": "src/lazyload-picturefill-background.js",
+  "unpkg": "dist/lazyload-picturefill-background.min.js",
+  "repository": "vinceumo/lazyload-picturefill-background",
+  "author": "Vincent Humeau <vincent.humeau@gmail.com> (http://vincent-humeau.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinceumo/lazyload-picturefill-background/issues"
+  },
+  "homepage": "https://github.com/vinceumo/lazyload-picturefill-background/",
+  "keywords": [
+    "responsive",
+    "image",
+    "lazyload"
+  ]
 }
