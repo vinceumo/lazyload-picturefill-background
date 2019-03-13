@@ -7,7 +7,7 @@ export default class lazyloadPicturefillBackground {
   static updateDefaultSettings(userSettings) {
     const defaultSettings = {
       pictureFillBackgroundSelector: ".picturefill-background",
-      lazySelector: "is-lazy",
+      lazySelector: ".is-lazy",
       pictureFillBackgroundSourceSelector: ".picturefill-background-source"
     };
 
@@ -38,7 +38,7 @@ export default class lazyloadPicturefillBackground {
 
           matches = this.getSources(sources);
 
-          for (let i = 0; i <= matches.length; i++) {
+          for (let i = 0; i < matches.length; i++) {
             const mq = window.matchMedia(matches[i].media);
 
             if (window.matchMedia && mq.matches) {
@@ -51,12 +51,18 @@ export default class lazyloadPicturefillBackground {
                 if (!exp.test(el.style.backgroundImage)) {
                   el.style.backgroundImage = "url('" + matches[i].src + "')";
                 }
+              } else {
+                const exp = new RegExp(this.escapeRegExp(matches[i - 1].src));
+                if (!exp.test(el.style.backgroundImage)) {
+                  el.style.backgroundImage =
+                    "url('" + matches[i - 1].src + "')";
+                }
               }
             });
           }
 
           if (el.classList.contains(this.options.lazySelector.substring(1))) {
-            createObserver(el, mqMatches);
+            this.createObserver(el, mqMatches, matches);
           } else {
             let src = mqMatches.length ? mqMatches.pop() : matches[0].src;
             el.style.backgroundImage = "url('" + src + "')";
@@ -81,13 +87,14 @@ export default class lazyloadPicturefillBackground {
     return matches;
   }
 
-  createObserver(pictureFillBackgroundSelector, mqMatches) {
+  createObserver(pictureFillBackgroundSelector, mqMatches, matches) {
+    const that = this;
     const observer = new IntersectionObserver(entries => {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           const lazyImage = entry.target;
-          lazyImage.classList.remove(this.options.lazySelector.substring(1));
-          this.lazyBackgroundImageObserver.unobserve(lazyImage);
+          lazyImage.classList.remove(that.options.lazySelector.substring(1));
+          observer.unobserve(lazyImage);
 
           let src = mqMatches.length ? mqMatches.pop() : matches[0].src;
           lazyImage.style.backgroundImage = "url('" + src + "')";
