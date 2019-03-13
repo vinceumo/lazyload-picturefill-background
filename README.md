@@ -2,7 +2,7 @@
 
 Responsive background images using [Window.matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) and the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
 
-This project is inspired from [M6Web/picturefill-background](https://github.com/M6Web/picturefill-background)
+This project is inspired by [M6Web/picturefill-background](https://github.com/M6Web/picturefill-background)
 
 ![Demo gif](demo/demo.gif)
 
@@ -98,7 +98,7 @@ new lazyloadPicturefillBackground({
 
 ## Browser support
 
-Lazyload Picturefill Background will work in all the modern browsers. the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) is not supported on IE you can use the [w3c polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill).
+Lazyload Picturefill Background will work in all modern browsers. the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) is not supported on IE you can use the [w3c polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill).
 
 The IntersectionObserver polyfill can be included in your project using [polyfill.io](https://polyfill.io/v3/), which will automatically include dependencies where necessary:
 
