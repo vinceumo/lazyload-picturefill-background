@@ -4,6 +4,8 @@ Responsive background images using [Window.matchMedia()](https://developer.mozil
 
 This project is inspired from [M6Web/picturefill-background](https://github.com/M6Web/picturefill-background)
 
+![Demo gif](demo/demo.gif)
+
 - [Lazyload Picturefill Background](#lazyload-picturefill-background)
   - [Getting Started](#getting-started)
     - [JS](#js)
@@ -106,4 +108,4 @@ The IntersectionObserver polyfill can be included in your project using [polyfil
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details

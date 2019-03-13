@@ -8,17 +8,21 @@
     <style>
       .picturefill-background {
         background-size: cover;
+        background-position: 50% 50%;
         background-repeat: no-repeat;
       }
 
       .picturefill-background.is-lazy {
-        background-color: lightsalmon;
+        background-color: hsl(0, 0%, 12%);
       }
 
       /*---------*/
       .example {
         width: 100%;
-        height: 500px;
+        overflow: hidden;
+        height: 0;
+        position: relative;
+        padding-top: 56.25%;
       }
     </style>
   </head>
@@ -27,26 +31,46 @@
     <div class="picturefill-background is-lazy example">
       <span
         class="picturefill-background-source"
-        data-src="https://source.unsplash.com/random/400x400"
+        data-src="https://dummyimage.com/300x16:9/1f1f1f/fff/"
       ></span>
       <span
         class="picturefill-background-source"
-        data-src="https://source.unsplash.com/random/640x640"
+        data-src="https://dummyimage.com/400x16:9/1f1f1f/fff/"
+        data-media="(min-width: 300px)"
+      ></span>
+      <span
+        class="picturefill-background-source"
+        data-src="https://dummyimage.com/500x16:9/1f1f1f/fff/"
         data-media="(min-width: 400px)"
       ></span>
       <span
         class="picturefill-background-source"
-        data-src="https://source.unsplash.com/random/800x800"
-        data-media="(min-width: 640px)"
+        data-src="https://dummyimage.com/600x16:9/1f1f1f/fff/"
+        data-media="(min-width: 500px)"
       ></span>
       <span
         class="picturefill-background-source"
-        data-src="https://source.unsplash.com/random/1500x1500"
+        data-src="https://dummyimage.com/700x16:9/1f1f1f/fff/"
+        data-media="(min-width: 600px)"
+      ></span>
+      <span
+        class="picturefill-background-source"
+        data-src="https://dummyimage.com/800x16:9/1f1f1f/fff/"
+        data-media="(min-width: 700px)"
+      ></span>
+      <span
+        class="picturefill-background-source"
+        data-src="https://dummyimage.com/900x16:9/1f1f1f/fff/"
         data-media="(min-width: 800px)"
       ></span>
-      <p>Lazy</p>
+      <span
+        class="picturefill-background-source"
+        data-src="https://dummyimage.com/1000x16:9/1f1f1f/fff/"
+        data-media="(min-width: 900px)"
+      ></span>
     </div>
   </body>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
   <script src="../dist/lazyload-picturefill-background.min.js"></script>
   <script>
     new lazyloadPicturefillBackground();
