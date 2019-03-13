@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "lazyload-picturefill-background",
   "description": "Responsive background images using Window.matchMedia() and the Intersection Observer API",
   "private": false,
