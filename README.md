@@ -35,7 +35,7 @@ yarn add lazyload-picturefill-background
 With CDN:
 
 ```html
-<script src="https://unpkg.com/lazyload-picturefill-background@1.0.0/dist/lazyload-picturefill-background.min.js"></script>
+<script src="https://unpkg.com/lazyload-picturefill-background@1.0.1/dist/lazyload-picturefill-background.min.js"></script>
 ```
 
 You can as well clone this repository.
